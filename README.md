@@ -14,6 +14,6 @@ Unidades :
 6. Operaciones con matrices
 7. Determinantes
 
-Para editar alguna presentación basta con descargar el archivo con extensión _.tex_, antes de compilar el archivo, ve a la parte superior y asegúrate de contar con las librerías y paquetes necesarios, de lo contrario no podrás visualizar el material. En caso de usar imagenes recuerda subirlas al repositorio para que los editores cuenten con todo los recursos y seguir actualizando.
+Para editar alguna presentación basta con descargar el archivo con extensión _.tex_, antes de compilar el archivo, ve a la parte superior y asegúrate de contar con las librerías y paquetes necesarios, de lo contrario no podrás visualizar el material. En caso de usar imágenes recuerda subirlas al repositorio para que los editores cuenten con todo los recursos y seguir actualizando.
 
 En caso de que solo desees el material como apoyo para tu estudio sólo descarga el archvio _PDF_.
