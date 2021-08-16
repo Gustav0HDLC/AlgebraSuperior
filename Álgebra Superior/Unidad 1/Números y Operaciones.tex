@@ -1,0 +1,388 @@
+\documentclass[11pt]{beamer}
+\usetheme{Madrid}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\newtheorem{defi}{Definición}
+\newtheorem{eje}{Ejercicio}
+\newtheorem{ejem}{Ejemplo}
+\newtheorem{axiom}{Axioma}
+\usepackage{Lipsum}
+
+\author{Adriana Dávila Santos}
+\title{Números y Operaciones}
+%\setbeamercovered{transparent} 
+%\setbeamertemplate{navigation symbols}{} 
+%\logo{} 
+%\institute{} 
+%\date{} 
+%\subject{} 
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%\begin{frame}
+%\tableofcontents
+%\end{frame}
+
+\begin{frame}{• Objetivo particular}
+El alumno distinguirá los diferentes tipos de números: naturales, enteros, racionales y reales e
+identificará las propiedades de la suma y el producto en estos números.
+\end{frame}
+\begin{frame}
+\frametitle{Números naturales}
+\framesubtitle{Suma y producto de los números naturales como operaciones binarias}
+\begin{defi}
+Al conjunto discreto de números positivos que permiten contar u ordenar los elementos
+de otro conjunto, se le conoce como \textbf{números naturales} y se denota de la siguiente forma:\\
+\begin{center}
+$\mathbb{N} = \{1,2,3,...\}$
+\end{center}
+\end{defi}
+\begin{defi}
+Sea una operación matemática que necesita como argumentos dos operandos y un operador para
+devolver un valor, se le conoce como \textbf{operación binaria}.
+\end{defi}
+\end{frame}
+
+\begin{frame}
+\frametitle{Números naturales}
+\framesubtitle{Suma y producto de los números naturales como operaciones binarias}
+La operación suma o adición en los números naturales requiere de dos operandos (números):
+$a,b \in \mathbb{N}$ y el operador '+' para devolver un valor $c$, de este modo
+vemos que cumple con la definición de operación binaria.\hspace{2cm}
+
+NOTA: Además podemos observar que $\forall ~ a,b \in \mathbb{N} ~ \& ~ a + b = c \rightarrow c\in \mathbb{N}$,
+a esta propiedad se le llama \textbf{cerradura} y de manera general signífica que la suma de dos 
+números naturales siempre devuelve como resultado un número natural.
+\end{frame}
+
+\begin{frame}
+\frametitle{Números naturales}
+\framesubtitle{Suma y producto de los números naturales como operaciones binarias}
+La operación producto o multiplicación en los números naturales requiere de dos operandos (números):
+$a,b \in \mathbb{N}$ y el operador $\cdot$ para devolver un valor $c$, de este modo
+vemos que cumple con la definición de operación binaria.\\ \hspace{2cm}
+
+NOTA: Además podemos observar que $\forall ~ a,b \in \mathbb{N} ~ \& ~ a \cdot b = c \rightarrow c\in \mathbb{N}$,
+a esta propiedad se le llama \textbf{cerradura} y de manera general signífica que el producto de dos 
+números naturales siempre devuelve como resultado un número natural.
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Números naturales}
+\framesubtitle{Conmutatividad}
+\begin{defi}
+La conmutaividad es la propiedad que poseen algunas operaciones binarias y permite cambiar el orden de los operandos
+sin afectar el resultado.
+\end{defi}
+\begin{itemize}
+\item Conmutatividad en la suma\\
+$a + b = b + a = c,~\forall ~ a,b \in \mathbb{N}$\\ \hspace{2cm}
+\item Conmutatividad en el producto\\
+$a \cdot b = b \cdot a = c,~\forall ~ a,b \in \mathbb{N}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Números naturales}
+\framesubtitle{Asociatividad}
+\begin{defi}
+La asociatividad es la propiedad que poseen algunas operaciones binarias e indica que dados 3 o más elementos de un conjunto,
+se pueden operar de manera indistinta en su orden, agrupando por pares de operandos.
+\end{defi}
+\begin{itemize}
+\item Asociatividad en la suma\\
+$(a + b) + c = a + (b + c) = d,~\forall ~ a,b,c \in \mathbb{N}$\\ \hspace{2cm}
+\item Asociatividad en el producto\\
+$(a \cdot b) \cdot c = a \cdot (b \cdot c) = d,~\forall ~ a,b,c \in \mathbb{N}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Números naturales}
+\framesubtitle{Distributividad}
+\begin{defi}
+Dadas las operaciones binarias cualesquiera $\oplus,~\otimes$ y el conjunto $\mathbb{N}$, se dice que $\otimes$ es distributiva sobre $\oplus$ si $\forall ~ x,y,z \in \mathbb{N}$ se cumple que $x \otimes (y \oplus z) = (x \otimes y) \oplus (x \otimes z)~\&~
+(y \oplus z) \otimes x = (y \otimes x) \oplus (z \otimes x)$
+\end{defi}
+En el caso de los números naturales, el producto es distributivo sobre la suma ya que se cumple la siguiente expresión:
+\begin{center}
+$a \cdot (b + c) = (a \cdot b) + (a \cdot c) = (b + c) \cdot a = (b \cdot a) + (c \cdot a)$
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Números naturales}
+\begin{ejem}
+Sea la operación binaria AND ($\&$) que establece una operación lógica bajo el conjunto $S = \{0,1\}$, tendremos la siguiente tabla de resultados (recordemos que solo es verdadero o 1 cuando los dos operandos son verdaderos, en este caso 1).
+\begin{center}
+\begin{tabular}{| r | c | l |}
+\hline
+\textbf{\&} & \textbf{0} & \textbf{1}	\\ \hline
+\textbf{0} & $0$ & $0$\\
+\textbf{1} & $0$ & $1$\\ \hline
+\end{tabular}
+\end{center}
+Es fácil ver que existe la propiedad conmutativa dada esta operación bajo este conjunto pues $1 ~ \& ~ 0 = 0 ~ \& ~ 1 = 0$\\
+También se posee la propiedad asociativa ya que no importa el orden en que agrupemos y operemos, pues sólo será 1 cuando todos los elementos que estamos operando sean 1
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Números naturales}
+\begin{ejem}
+Sea la operación binaria OR ( $||$ ) que establece una operación lógica bajo el conjunto $S = \{0,1\}$, tendremos la siguiente tabla de resultados (recordemos que es verdadero o 1 cuando al menos uno de los operandos es verdadero, en este caso 1).
+\begin{center}
+\begin{tabular}{| r | c | l |}
+\hline
+\textbf{$||$} & \textbf{0} & \textbf{1}	\\ \hline
+\textbf{0} & $0$ & $1$\\
+\textbf{1} & $1$ & $1$\\ \hline
+\end{tabular}
+\end{center}
+Es fácil ver que existe la propiedad conmutativa dada esta operación bajo este conjunto pues $1 ~ || ~ 0 = 0 ~ || ~ 1 = 1$\\
+También se posee la propiedad asociativa ya que no importa el orden en que agrupemos y operemos, pues sólo será 0 cuando todos los elementos que estamos operando sean 0
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Números naturales}
+\begin{ejem}
+Tomaremos las dos operaciones anteriores AND y OR para determinar que AND es distributiva sobre OR.\\
+\begin{center}
+$a~\&~(b~||~c) = (a~\&~b)~||~(a~\&~c)~\forall~a,b,c~\in~\{0,1\}$
+\end{center}
+Si lo pensamos bien, es fácil deducirlo, ya que $(b~||~c)$ se convierte en un operando $d$ que será verdadero si al menos uno es verdadero, así que si los dos son falsos $(a~\&~b) = (a~\&~c) = d = 0$ sin importar el valor de $a$, pero en el caso de que alguno sea verdadero entonces $(a~\&~b)$ y/ó $(a~\&~c)$ serán 1, siendo así que el resultado será 1
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Números enteros}
+\framesubtitle{Propiedades de la suma y el producto}
+\begin{defi}
+Se conoce como números enteros al conjunto numérico que contiene al conjunto $\mathbb{N}$, a sus inversos negativos
+y al cero. Se denota de la siguiente forma:\\
+\begin{center}
+$\mathbb{Z} = \{...,-3,-2,-1,0,1,2,3,...\}$
+\end{center} 
+\end{defi}
+\begin{eje}
+Demostrar que las propiedades asociativa, conmutativa y distributiva se cumplen para la multiplicación y adición bajo el 
+conjunto $\mathbb{Z}$ 
+\end{eje}
+\end{frame}
+
+\begin{frame}
+\frametitle{Números enteros}
+\framesubtitle{Elemento neutro}
+\begin{defi}
+Sea i un número que pertenece a un conjunto de números $S$ y $\oplus$ una operación binaria bajo el conjunto $S$, 
+se dice que i es el elemento neutro o elemento identidad si se cumple:\\
+\begin{center}
+$ a \oplus i = i \oplus a = a~\forall ~a~\in S$
+\end{center}
+\end{defi}
+\begin{itemize}
+\item El elemento neutro para la adición bajo $\mathbb{Z}$ es el número 0\\
+$a + 0 = 0 + a = a~\forall~a~\in~\mathbb{Z}$
+\item El elemento neutro para el producto bajo $\mathbb{Z}$ es el número 1
+$a \cdot 1 = 1 \cdot a = a~\forall~a~\in~\mathbb{Z}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Números enteros}
+\framesubtitle{Inverso aditivo}
+\begin{defi}
+Sean $a,-a~\in~\mathbb{Z}$, se dice que uno es inverso aditivo del otro si se cumple que $a + (-a) = (-a) + a = 0$
+\end{defi} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Números enteros}
+\begin{ejem}
+Sea el conjunto $S = \{a,b,c,d,e\}$ y la operación $\oplus$ cuya regla de correspondencia está dada por la siguiente tabla: \\
+\begin{center}
+\begin{tabular}{| r | c | c | c | c | l |}
+\hline
+\textbf{$\oplus$} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d} & \textbf{e}	\\ \hline
+\textbf{a} & a & b & c & d & e \\
+\textbf{b} & b & e & a & c & d \\
+\textbf{c} & c & a & b & e & d \\ 
+\textbf{d} & d & c & e & c & a \\ 
+\textbf{e} & e & d & d & a & d \\ \hline
+\end{tabular}
+\end{center}
+Podemos observar que esta operación binaria posee elemento neutro ya que al operar con \textbf{a} obtenemos como resultado el valor del otro operando.\\
+También existen los inversos para todos los elementos de $S$, ya que $b~\oplus~c = c~\oplus~b = d~\oplus~e = e~\oplus~d = a~\oplus~a = a$, donde cada par de operandos son inversos entre sí.
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\begin{eje}
+Del ejemplo anterior, determinar si posee las propiedades conmutativa y asociativa
+\end{eje}
+\end{frame}
+
+\begin{frame}
+\frametitle{Números racionales}
+\framesubtitle{Propiedades de la suma y el producto}
+\begin{defi}
+Los números racionales son el conjunto de números que puede expresarse como el cociente de dos números enteros y se
+representa de la siguiente forma:\\
+\begin{center}
+$\mathbb{Q} = \{r = (p/q): p,q\in~\mathbb{Z}\}$
+\end{center}
+\end{defi} 
+\begin{eje}
+Demostrar que las propiedades asociativa, conmutativa y distributiva se cumplen para la multiplicación y adición bajo el 
+conjunto $\mathbb{Q}$ 
+\end{eje}
+\end{frame}
+
+\begin{frame}
+\frametitle{Números racionales}
+\framesubtitle{Inversos multiplicativos}
+\begin{defi}
+El inverso multiplicativo o recíproco de un número $x$ se expresa como $\frac{1}{x}$ ó $x^{-1}$ y se cumple que 
+$\frac{1}{x} \cdot x = x^{-1} \cdot x = 1$
+\end{defi}
+\end{frame}
+
+\begin{frame}
+\frametitle{Números reales}
+\framesubtitle{Propiedades de la suma y el producto}
+\begin{defi}
+Los números reales son el conjunto resultado de la unión de los números racionales e irracionales (aquellos que no 
+pueden ser expresados como el cociente de dos enteros) y se denota de la siguiente forma:
+\begin{center}
+$\mathbb{R} = \mathbb{Q} \cup \mathbb{Q}^{c}$
+\end{center}
+\end{defi}
+\begin{eje}
+Demostrar que las propiedades asociativa, conmutativa y distributiva se cumplen para la multiplicación y adición bajo el 
+conjunto $\mathbb{R}$ 
+\end{eje}
+\end{frame}
+
+\begin{frame}
+\frametitle{Números reales}
+\framesubtitle{Completitud}
+\begin{axiom}
+Cada conjunto no vacío de números reales que está acotado superiormente tiene una cota superior mínima.
+\\Esto es $\forall ~conjunto ~ S \neq ~ \emptyset, S~\subseteq~\mathbb{R}~\exists~b~\in~\mathbb{R}:~b\geqslant a~\forall~
+a~\in~S$
+\end{axiom}
+Se puede plantear el mismo caso pero para definir un conjunto acotado inferiormente por una cota superior máxima.
+\\A esta cota superior mínima se le conoce como \textbf{supremo} y es único, por lo que si se propone un supremo $S_1~y~S_2$
+siempre se llegará a la conclusión $S_1 = S_2$
+\end{frame}
+
+\begin{frame}
+\frametitle{Números reales}
+\framesubtitle{Estructuras algebraicas}
+\begin{defi}
+Una \textbf{estructura algebraica} es un conjunto de números $S$ no vacío asociado a sus respectivas operaciones 
+aplicables sobre los elementos que lo componen. 
+\end{defi}
+Ejemplo:
+\\$(\mathbb{R},+,*)$ \hspace{2cm}
+\\ 
+De manera general podemos dividir a las estructuras algebraicas en tres tipos:
+\begin{itemize}
+\item Grupos
+\item Anillos
+\item Campos
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Números reales}
+\framesubtitle{Grupos}
+\begin{defi}
+Sea G un conjunto de números que posee la propiedad de cerradura para una operación $\oplus$, se dice que es un grupo
+si se cumple que:
+\begin{itemize}
+\item Posee la propiedad asociativa
+\item Tiene elemento neutro
+\item Existe elemento inverso para todos los elementos de G
+\end{itemize}
+\end{defi}
+\end{frame}
+
+\begin{frame}
+\frametitle{Números reales}
+\begin{ejem}
+Un ejemplo de \textbf{grupo} es la tupla $(\mathbb{Z},+)$, pues la suma es cerrada para los números enteros, es decir, la suma de n enteros siempre dará como resultado un entero. Anteriormente se propuso como ejercicio demostrar que posee la propiedad asociativa, así que daremos por hecho que ya está demostrado. \\
+Existe un elemento neutro que es el 0, pues $a + 0 = 0 + a = a~\forall~a\in~\mathbb{Z}$\\
+También existe un inverso para cada elemento de $\mathbb{Z}$, pues es el mismo número pero con signo contrario, es decir, $\forall~a, \in~\mathbb{Z}~\exists -a: a + (-a) = (-a) + a = 0$\\
+Así podemos concluir que es un grupo, pero además es un \textbf{grupo conmutativo o abeliano} pues también posee esa propiedad.
+\end{ejem}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Números reales}
+\framesubtitle{Anillo}
+\begin{defi}
+Un anillo es una estructura algebraica compuesta por un conjunto G donde se definen las operaciones '$+,\cdot$' y se cumple lo siguiente: 
+\\
+\begin{itemize}
+\item La adición es asociativa
+\item La adición es conmutativa
+\item Existe el neutro para la adición
+\item Existe inverso aditivo para todos los elementos de G
+\item El producto es asociativo
+\item El producto es distributivo sobre la suma
+\end{itemize}
+\end{defi}
+\end{frame}
+
+\begin{frame}
+\frametitle{Números reales}
+\begin{ejem}
+Siguiendo el ejemplo anterior de grupo, incluiremos a la tupla la operación '$\cdot$', teniendo así $(\mathbb{Z},+,\cdot)$\\
+Cabe destacar que las condiciones respecto a la suma se resumen a que $(\mathbb{Z},+)$ sea un grupo abeliano o conmutativo, algo que ya determinamos anteriormente. Por lo que falta verficar las propiedades sobre el producto.\\
+Cuando vimos los números enteros, se dejó como ejercicio demostrar la asociatividad y distributividad del producto sobre la suma, así que podemos concluir que es un \textbf{anillo conmutativo}, ya que el producto también posee esa propiedad. Más adelante veremos que esta tupla es una estructura más compleja cumpliendo otras propiedades que lo convierten en un campo.
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Números reales}
+\framesubtitle{Campo}
+\begin{defi}
+Un cuerpo o campo es una estructura algebraica compuesta por un conjunto G donde se definen las operaciones '$+,\cdot$' y se cumple lo siguiente: 
+\\
+\begin{itemize}
+\item La adición es asociativa
+\item La adición es conmutativa
+\item Existe el neutro para la adición
+\item Existe inverso aditivo para todos los elementos de G
+\item El producto es asociativo
+\item El producto es conmutativo
+\item Existe el neutro para el producto
+\item Existe inverso multiplicativo para todos los elementos de G
+\item El producto es distributivo sobre la suma
+\end{itemize}
+\end{defi}
+\end{frame}
+
+\begin{frame}
+\frametitle{Números reales}
+\begin{ejem}
+Como ya vimos, las caracterísitcas de la suma se resumen a que $(\mathbb{Z},+)$ sea un grupo abeliano o conmutativo y en este caso debemos verificar lo mismo para el producto, es decir, $(\mathbb{Z},\cdot)$ sea un grupo abeliano o conmutativo, sin embargo, a lo largo de la unidad hemos visto que se cumplen todas esas propiedades para el producto (conmutatividad, asocitividad, neutro = 1, inverso = $\frac{1}{x}$, distributividad), por lo que concluimos que además de ser un anillo abeliano, cumple los requisitos para ser un \textbf{campo}. 
+\end{ejem}
+\begin{eje}
+Demostrar que $(\mathbb{R},+,\cdot)$ es un campo
+\end{eje}
+\end{frame}
+
+\end{document}

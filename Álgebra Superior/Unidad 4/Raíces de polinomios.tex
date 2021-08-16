@@ -1,0 +1,393 @@
+\documentclass[11pt]{beamer}
+\usetheme{Madrid}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\newtheorem{defi}{Definición}
+\newtheorem{eje}{Ejercicio}
+\newtheorem{ejem}{Ejemplo}
+\newtheorem{axiom}{Axioma}
+\newtheorem{teor}{Teorema}
+\usepackage{lipsum}
+
+\author{Adriana Dávila Santos}
+\title{Raíces de polinomios}
+%\setbeamercovered{transparent} 
+%\setbeamertemplate{navigation symbols}{} 
+%\logo{} 
+%\institute{} 
+%\date{} 
+%\subject{} 
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%\begin{frame}
+%\tableofcontents
+%\end{frame}
+
+\begin{frame}{• Objetivo particular:}
+El alumno realizará operaciones fundamentales con polinomios en una variable, identificará el
+concepto de raíz de un polinomio y obtendrá raíces de polinomios con coeficientes racionales
+por medio de la división sintética y técnicas que auxilian en la búsqueda de raíces.
+\end{frame}
+
+\begin{frame}
+\frametitle{Polinomios en una variable: grado, suma y producto}
+\begin{defi}
+A la suma de uno o más términos algebraicos cuyas variables tienen exponentes enteros positivos se le conoce como \textbf{polinomio}.
+\begin{center}
+$P(x) = a_0x^n + a_1x^{n-1} + a_2x^{n-2} + ... + a_nx^{0},~n\in \mathbb{Z}^+, ~ a_i\in \mathbb{R}$
+\end{center}
+\end{defi}
+\begin{defi}
+El grado de un polinomio será el máximo exponente al que este elevado la variable, es decir, el polinomio: \\
+\begin{center}
+$P(x) = a_0x^n + a_1x^{n-1} + a_2x^{n-2} + ... + a_nx^{0},~n\in \mathbb{Z}^+, ~ a_i\in \mathbb{R}$\\
+\end{center}
+será de n-ésimo grado
+\end{defi}
+NOTA: Para este curso sólo utilizaremos polinomios de una sola variable y se recomienda ordenarlos de mayor a menor de acuerdo a la potencia de la variable.
+\end{frame}
+
+\begin{frame}
+\frametitle{Polinomios en una variable: grado, suma y producto}
+\begin{defi}
+Sean los polinomios $P(x) = a_0x^n + a_1x^{n-1} + a_2x^{n-2} + ... + a_nx^{0}$ y $Q(x) = b_0x^n + b_1x^{n-1} + b_2x^{n-2} + ... + b_nx^{0}$, entonces: \\ \hspace{0cm} \\
+$P(x)+Q(x) = (a_0+b_0)x^{n} + (a_1+b_1)x^{n-1} + (a_2+b_2)x^{n-2} + ... + (a_n+b_n)x^{0}$\\ \hspace{0cm} \\
+Es decir, solo se suman los coeficientes cuyo exponente de la variable sea el mismo.
+\end{defi}
+\begin{ejem}
+Sean los polinomios $P(x) = 3x^3 + x^2 + 8$ y $Q(x) = 12x^3 + 4x^2 + 3x + 9$, encuentre $P(x)+Q(x)$\\ \hspace{0cm} \\
+$P(x)+Q(x) = (3+12)x^3 + (1+4)x^2 + (0+3)x + (8 + 9) = 15x^3 + 5x^2 + 3x + 17$
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Polinomios en una variable: grado, suma y producto}
+\begin{defi}
+Sean los polinomios $P(x) = a_0x^n + a_1x^{n-1} + a_2x^{n-2} + ... + a_nx^{0}$ y $Q(x) = b_0x^n + b_1x^{n-1} + b_2x^{n-2} + ... + b_nx^{0}$, entonces: \\ \hspace{0cm} \\
+$P(x)\cdot Q(x) = (a_0)x^n\cdot Q(x) + (a_1)x^{n-1}\cdot Q(x) + (a_2)x^{n-2}\cdot Q(x) + ... + (a_n)x^0\cdot Q(x)$\\ \hspace{0cm} \\
+Es decir, se multiplican cada uno de los términos de P(x) por los de Q(x) distribuyendo el producto sobre la suma.
+\end{defi}
+\begin{ejem}
+Sean los polinomios $P(x) = 2x^2 + 3x + 7$ y $Q(x) = x + 3$, encuentre $P(x)\cdot Q(x)$ \\
+$P(x)\cdot Q(x) = (2x^2 + 3x + 7)(x + 3) = 2x^2(x+3) + 3x(x+3) + 7(x+3) = 2x^3 + 9x^2 + 16x + 21$
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Polinomios en una variable: grado, suma y producto}
+\framesubtitle{División de polinomios}
+Para explicar este algoritmo lo haremos mediante un ejemplo:\\ \hspace{0cm} \\
+Sean $P(x) = 3x^2 + 2x - 8$ y $Q(x) = x+2$, obtenga $P(x)/Q(x)$\\ \hspace{0cm} \\
+Lo primero es ordenar los polinomios de manera descendente de acuerdo al exponente de su variable, en este caso eso ya está listo.\\
+Ahora buscamos un polinomio que al multiplicarse por $Q(x)$, el resultado sea lo más parecido posible a $P(x)$, para ello observamos a los términos con mayor exponente en ambos polinomios, vamos a encontrar una expresión que al multiplicarse por el primer término de $Q(x)$ sea igual al primer término de $P(x)$. Vemos con facilidad que al multiplicar $x$ (primer término de $Q(x)$) por $3x$ tendremos como resultado $3x^2$ (primer término de $P(x)$).
+\end{frame}
+
+\begin{frame}
+\frametitle{Polinomios en una variable: grado, suma y producto}
+\framesubtitle{División de polinomios}
+Ya sabemos que un término de la expresión que estamos buscando es $3x$, entonces hacemos la siguiente operación, multiplicamos el término que encontramos por $Q(x)$: $3x(x+2) = 3x^2 + 6x$, este resultado se lo vamos a restar a $P(x)$: $(3x^2 + 2x - 8) - (3x^2 + 6x) = -4x - 8$.\\
+Ahora repetimos el paso de encontrar un término que al multiplicarse por el primero de $Q(x)$ sea igual al primer término del polinomio resultante de la última operación, en este caso $-4x$, así que el término que buscamos es $-4$ ya que $(x)(-4) = -4x$.\\
+Sabiendo esto, agregamos el $-4$ a la expresión que estamos formando, quedano hasta el momento como: $3x-4$
+\end{frame}
+
+\begin{frame}
+\frametitle{Polinomios en una variable: grado, suma y producto}
+\framesubtitle{División de polinomios}
+De nuevo multiplicamos el término que encontramos por $Q(x)$: $-4(x+2) = -4x -8$ y se lo restamos al polinomio $-4x-8$, quedando de la siguiente forma: $(-4x-8)-(-4x-8) = 0$. \\
+Observamos que ya no tenemos residuo, así que finaliza el proceso de división y podemos decir que:\\ \hspace{0cm} \\
+\begin{center}
+$\frac{3x^2 + 2x - 8}{x + 2} = 3x - 4 = O(x)$\\
+\end{center}
+En este caso $P(x) = Q(x)\cdot O(x)$, sin embargo en muchos casos obtendremos un residuo con el que ya no podamos encontrar un término para eliminarlo, así que de manera general: $P(x)/Q(x) = O(x) + r$, dónde \textbf{r} es el residuo.
+\end{frame}
+
+\begin{frame}
+\frametitle{Polinomios en una variable: grado, suma y producto}
+\framesubtitle{Teorema del residuo}
+\begin{teor}
+Sea un polinomio $P(x)$ divididio por $x-a$, entonces el residuo \textbf{r} = $P(a)$, dónde \textbf{a} es cualquier número.\\ \hspace{0cm} \\
+$\frac{P(x)}{x-a} = O(x) + P(a)$\\ \hspace{0cm} \\
+\end{teor}
+Recordemos que $P(a)$ se refiere a sustituir todas las $x$ por la constante $a$, por lo que $P(a)$ es una constante.
+\end{frame}
+
+\begin{frame}
+\frametitle{Polinomios en una variable: grado, suma y producto}
+\framesubtitle{Teorema del factor}
+\begin{defi}
+La raíz de un polinomio $P(x)$ es aquel valor \textbf{a} que puede tomar la variable del polinomio de modo que $P(a) = 0$
+\end{defi}
+\begin{teor}
+El teorema del factor establece que un polinomio $P(x)$ tiene un factor $(x-k)$ si y solo si $k$ es una raíz de $P(x)$, es decir que $P(k) = 0$.
+\end{teor}
+\end{frame}
+
+\begin{frame}
+\frametitle{Polinomios en una variable: grado, suma y producto}
+\framesubtitle{División sintética}
+La división sintética es un algoritmo que nos ayuda a factorizar un polinomio de acuerdo a sus raíces o bien dividir  dos polinomios donde el polinomio divisor sea de grado 1. Vamos a ver el algoritmo mediante un ejemplo: \\
+Sea $P(x) = x^3 - 4x^2 + x + 6$, obtenga sus raíces mediante división sintética.\\
+Lo primero es ordenar el polinomio en forma descendente de acuerdo al exponente de su variable. En este ejemplo ese paso ya está listo.\\ 
+
+Después debemos obtener los divisores del término independiente, en este caso 6, así que probaremos el método con los números
+$\pm (1,2,3,6)$\\
+Ahora acomodamos los coeficientes de cada término en una tabla de acuerdo a su exponente.\\ \hspace{0cm} \\
+\begin{tabular}{c|c|c|c|}
+$x^3$ & $x^2$ & $x^1$ & $x^0$\\ \hline
+1 & -4 & 1 & 6 \\ \hline
+\end{tabular}
+\end{frame}
+
+\begin{frame}
+\frametitle{Polinomios en una variable: grado, suma y producto}
+\framesubtitle{División sintética}
+Es importante usar los divisores con ambos signos ya que esto facilita la búsqueda, en caso de aplicar el método con números al azar, sería más difícil encontrar las raíces. \\
+Empecemos probando con -1:\\
+Lo que se hace es operar de izquierda a derecha, el primer coeficiente baja de manera directa, luego multiplicamos a ese número por el que nosotros estemos probando, en este caso -1, el resultado es -1 y lo escribimos debajo del siguiente coeficiente que es -4, sumamos y obtenemos -5, al cual le aplicamos los dos pasos anteriores, multiplicar por -1 y escribir debajo del siguiente coeficiente para sumarlos. Este proceso se repite hasta llegar al último coeficiente del polinomio.
+\end{frame}
+
+\begin{frame}
+\frametitle{Polinomios en una variable: grado, suma y producto}
+\framesubtitle{División sintética}
+Del lado derecho escribimos el número que estamos probando como candidato a raíz para visualizar mejor las operaciones.\\ \hspace{0cm} \\
+\begin{tabular}{c|c|c|c|}
+$x^3$ & $x^2$ & $x^1$ & $x^0$\\ \hline
+1 & -4 & 1 & 6 \\ 
+0 & -1 & 5 & -6 \\ \hline
+1 & -5 & 6 & 0
+\end{tabular}
+-1\\ \hspace{0cm} \\
+Al finalizar la iteración vemos que el último coeficiente es 0, por lo que -1 es una raíz del polinomio y ahora podemos expresarlo como $P(x) = (x + 1)(x^2 -5x + 6)$. En caso de que el último coeficiente sea diferente de 0, lo descartamos como raíz.
+\end{frame}
+
+\begin{frame}
+\frametitle{Polinomios en una variable: grado, suma y producto}
+\framesubtitle{División sintética}
+Repetimos el proceso, ahora lo haremos con el número 2 \\ \hspace{0cm} \\
+\begin{tabular}{c|c|c|}
+$x^2$ & $x^1$ & $x^0$\\ \hline
+1 & -5 & 6 \\ 
+0 & 2 & -6\\ \hline
+1 & -3 & 0
+\end{tabular}
+2\\ \hspace{0cm} \\
+Observe como se reduce la tabla ya que al encontrar una raíz redujimos en un grado al polinomio restante por hallar sus raíces, de nuevo el último coeficientes es 0, así que 2 es raíz y tenemos que: $P(x) = (x+1)(x-2)(x-3)$.\\
+Con esto acabamos y encontramos todas las raíces, ya que el último polinomio es de grado 1 y para obtener su raíz solo despejamos, observando que la tercer raíz es 3.
+\end{frame}
+
+\begin{frame}
+\frametitle{Polinomios en una variable: grado, suma y producto}
+\framesubtitle{División sintética}
+En el ejemplo que manejamos aplicamos directamente el proceso con las raíces para fines prácticos, pero en general se debe hacer con cada número divisor siguiendo un orden, además de que si un número es raíz, debemos volver a iterar con ese número ya que existen las raíces repetidas.\\
+Otro caso a considerar es que podemos iterar hasta obtener un polinomio de grado 2, ya que es más sencillo aplicar fórmula general o TCP para hallar las raíces restantes.\\ \hspace{0cm} \\
+En este ejemplo vemos que se cumplen el teorema del residuo y del factor, ya que dividimos por polinomios de grado 1 que contienen a la raíz, por lo tanto el residuo es 0, cosa que vemos en el último coeficiente de las iteraciones. El teorema del factor se ve cada que expresamos a $P(x)$ al encontrar una raíz.
+\end{frame}
+
+\begin{frame}
+\frametitle{Raíces}
+\framesubtitle{Teorema fundamental del álgebra}
+\begin{teor}
+El teorema fundamental del álgebra establece que todo polinomio de n-ésimo grado tiene exactamente n raíces.
+\end{teor}
+\begin{eje}
+Demostrar el teorema fundamental del álgebra
+\end{eje}
+\end{frame}
+
+\begin{frame}
+\frametitle{Raíces}
+\framesubtitle{Técnicas que auxilian en la búsqueda de raíces}
+\begin{itemize}
+\item Posibles raíces racionales\\
+Como ya vimos en división sintética, observamos el término independiente y obtenemos sus divisores como candidatos con signo positivo y negativo. Lo mismo aplica para el coeficiente del término con el exponente más alto. Finalmente cualquier combinación de fracciones que se pueda hacer al dividir los divisores del término independiente por los divisores del término de mayor exponente también pueden ser raíces.
+\item Regla de los signos de Descartes\\
+Esta regla ordena el polinomio en forma descendente y después cuenta los cambios de signo que hay término a término, el número de cambios de signos lo denotamos como \textbf{n} y esto indica que podemos tener $(n-2i)$ raíces positivas donde $i\in \mathbb{Z}^+$. De manera enteramente similar pasa para $P(-x)$ que nos indica el posible número de raíces negativas, esto se hace por la posibilidad de tener raíces complejas. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Raíces}
+\framesubtitle{Técnicas que auxilian en la búsqueda de raíces}
+\begin{itemize}
+\item Cota superior\\
+Si al dividir $P(x)$ por $(x-a)$ siendo $a\geq 0$ mediante la división sintética,
+cuando los coeficientes del polinomio cociente son positivos o
+cero, entonces \textbf{a} es cota superior de las raíces reales de $P(x) = 0$\\
+\item Cota inferior\\
+Si al dividir $P(x)$ por $(x + b)$ siendo $b\leq 0$ mediante la división sintética,
+cuando todos los coeficientes del polinomio cociente son
+alternados positivo, negativo o cero entonces \textbf{b} es cota inferior de
+las raíces reales de $P(x) = 0$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Raíces}
+\framesubtitle{Técnicas que auxilian en la búsqueda de raíces}
+\begin{itemize}
+\item Raíces conjugadas\\
+Si un número $z\in \mathbb{C}$ es raíz de un polinomio $P(x)$, entonces $\bar{z}$ también es raíz.\\
+\item Raíces repetidas\\
+Al aplicar división sintética es recomendable volver a probar un número que ya fue determinado como raíz ya que este se puede repetir.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Raíces}
+\framesubtitle{Técnicas que auxilian en la búsqueda de raíces}
+\begin{ejem}
+Encuentre las raíces del polinomio $P(x) = 4x^4 + 9x^3 -5x^2 + 9x -9$\\ \hspace{0cm} \\
+\begin{itemize}
+\item Posibles raíces racionales\\
+$\pm (1,3,9),~\pm (1,2,4),~\pm (\frac{1}{2},\frac{1}{4},\frac{3}{2},\frac{3}{4},\frac{9}{2},\frac{9}{4},)$ \\ \hspace{0cm} \\
+\item Regla de los signos de Descartes\\
+En $P(x)$ hay 3 cambios de signos, en $P(-x)$ hay 1 un cambio de signos. Entonces haciendo las combinaciones con $(n-2i)$ podemos tener una raíz positiva, una negativa y dos complejas o tres positivas, una negativa y cero complejas.
+\end{itemize}
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Raíces}
+\framesubtitle{Técnicas que auxilian en la búsqueda de raíces}
+\begin{ejem}
+\begin{itemize}
+\item Procedemos con la división sintética\\ \hspace{0cm} \\
+\begin{tabular}{c|c|c|c|c|}
+$x^4$ & $x^3$ & $x^2$ & $x^1$ & $x^0$\\ \hline
+4 & 9 & -5 & 9 & -9\\ 
+0 & 4 & 13 & 8 & 17 \\ \hline
+4 & 13 & 8 & 17 & 8
+\end{tabular}
+1\\ \hspace{0cm} \\
+\item Cota superior\\
+Vemos que con 1 como candidato todos los coeficientes del cociente son positivos así que 1 es cota superior y decimos que ninguna raíz será mayor que 1, eliminando muchas opciones.
+\end{itemize}
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Raíces}
+\framesubtitle{Técnicas que auxilian en la búsqueda de raíces}
+\begin{ejem}
+\begin{itemize}
+\item Continuamos con la división sintética\\ \hspace{0cm} \\
+\begin{tabular}{c|c|c|c|c|}
+$x^4$ & $x^3$ & $x^2$ & $x^1$ & $x^0$\\ \hline
+4 & 9 & -5 & 9 & -9\\ 
+0 & -4 & -5 & 10 & -19 \\ \hline
+4 & 5 & -10 & 19 & -28
+\end{tabular}
+-1\\ \hspace{0cm} \\
+\item Seguimos sin encontrar raíz \\ \hspace{0cm} \\
+\begin{tabular}{c|c|c|c|c|}
+$x^4$ & $x^3$ & $x^2$ & $x^1$ & $x^0$\\ \hline
+4 & 9 & -5 & 9 & -9\\ 
+0 & -8 & -2 & 14 & -46\\ \hline
+4 & 1 & -7 & 23 & -55
+\end{tabular}
+-2\\ \hspace{0cm} \\
+\end{itemize}
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Raíces}
+\framesubtitle{Técnicas que auxilian en la búsqueda de raíces}
+\begin{ejem}
+\begin{itemize}
+\item Continuamos con la división sintética\\ \hspace{0cm} \\
+\begin{tabular}{c|c|c|c|c|}
+$x^4$ & $x^3$ & $x^2$ & $x^1$ & $x^0$\\ \hline
+4 & 9 & -5 & 9 & -9\\ 
+0 & -12 & 9 & -12 & 9 \\ \hline
+4 & -3 & 4 & -3 & 0
+\end{tabular}
+-3\\ \hspace{0cm} \\
+\item Observamos que -3 es raíz, entonces tenemos que $P(x) = (x+3)(4x^3 - 3x^2 + 4x -3)$ \\ \hspace{0cm} \\
+\end{itemize}
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Raíces}
+\framesubtitle{Técnicas que auxilian en la búsqueda de raíces}
+\begin{ejem}
+\begin{itemize}
+\item Rediseñamos la tabla y probamos de nuevo con -3\\ \hspace{0cm} \\
+\begin{tabular}{c|c|c|c|}
+$x^3$ & $x^2$ & $x^1$ & $x^0$\\ \hline
+4 & -3 & 4 & -3\\ 
+0 & -12 & 45 & -147 \\ \hline
+4 & -15 & 49 & -150
+\end{tabular}
+-3\\ \hspace{0cm} \\
+\item Observamos que -3 no es raíz repetida pero además vemos que es cota inferior por lo que ninguna raíz será menor que -3, así reducimos el campo de búsqueda.\\ \hspace{0cm} \\
+\end{itemize}
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Raíces}
+\framesubtitle{Técnicas que auxilian en la búsqueda de raíces}
+\begin{ejem}
+\begin{itemize}
+\item Probamos ahora con la fracción $\frac{3}{4}$ ya que se encuentra dentro de nuestro rango\\ \hspace{0cm} \\
+\begin{tabular}{c|c|c|c|}
+$x^3$ & $x^2$ & $x^1$ & $x^0$\\ \hline
+4 & -3 & 4 & -3\\ 
+0 & 3 & 0 & 3 \\ \hline
+4 & 0 & 4 & 0
+\end{tabular}
+$\frac{3}{4}$\\ \hspace{0cm} \\
+\item Observamos que $\frac{3}{4}$ es raíz, así que tenemos $P(x) = (x+3)(x-\frac{3}{4})(4x^2 + 4)$, además es cota superior por lo que de nuevo reducimos el campo de búsqueda y ahora tenemos un polinomio de grado 2 que podemos resolver mediante algún método conocido.\\ \hspace{0cm} \\
+\end{itemize}
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Raíces}
+\framesubtitle{Técnicas que auxilian en la búsqueda de raíces}
+\begin{ejem}
+\begin{itemize}
+\item Resolvemos la ecuación \\ 
+$4x^2 + 4 = 0~\rightarrow ~ 4x^2 = -4~\rightarrow ~ 2x = \pm \sqrt{-4} = \pm 2i$\\
+$\therefore x = \pm i$\\ \hspace{0cm} \\
+\item Con esto tenemos las 4 raíces, pero vamos a comprobar las últimas 2 que resultaron ser complejas mediante división sintética:\\ \hspace{0cm} \\
+\begin{tabular}{c|c|c|}
+$x^2$ & $x^1$ & $x^0$\\ \hline
+4 & 0 & 4\\ 
+0 & 4i & -4\\ \hline
+4 & 4i & 0
+\end{tabular}
+i\\ \hspace{0cm} \\
+\end{itemize}
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Raíces}
+\framesubtitle{Técnicas que auxilian en la búsqueda de raíces}
+\begin{ejem}
+\begin{itemize}
+\item Con esto vemos que i es raíz y tenemos que $P(x) = (x+3)(x-\frac{3}{4})(x-i)(4x+4i) = (x+3)(x-\frac{3}{4})(x-i)\frac{1}{4}(x+i)$\\ \hspace{0cm} \\
+\item Además comprobamos que si un número complejo es raíz entonces su conjugado también lo es.\\ \hspace{0cm} \\
+\end{itemize}
+Finalmente tenemos: \\
+$x_1 = -3$\\
+$x_2 = \frac{3}{4}$\\
+$x_3 = i$\\
+$x_4 = -i$\\
+\end{ejem}
+\end{frame}
+
+
+\end{document}

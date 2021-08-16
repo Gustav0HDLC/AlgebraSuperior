@@ -1,0 +1,162 @@
+\documentclass[11pt]{beamer}
+\usetheme{Madrid}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\newtheorem{defi}{Definición}
+\newtheorem{eje}{Ejercicio}
+\newtheorem{ejem}{Ejemplo}
+\newtheorem{axiom}{Axioma}
+\usepackage{Lipsum}
+\author{Adriana Dávila Santos}
+\title{Inducción Matemática}
+%\setbeamercovered{transparent} 
+%\setbeamertemplate{navigation symbols}{} 
+%\logo{} 
+%\institute{} 
+%\date{} 
+%\subject{} 
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+%\begin{frame}
+%\tableofcontents
+%\end{frame}
+
+\begin{frame}{• Objetivo particular}
+El alumno demostrará proposiciones acerca de los números naturales por medio de inducción
+matemática.
+\end{frame}
+
+\begin{frame}
+\frametitle{Los Postulados de Peano: el principio de inducción}
+\begin{itemize}
+\item $1~\in~\mathbb{N}$
+\item $\forall~n~\in~\mathbb{N},~\exists$ un único $n'$ : denominado \textbf{sucesor de n} ($n + 1 = n'$)
+\item $\forall~n~\in~\mathbb{N}$ se tiene que $n'~\neq~1$ (1 no es sucesor en los naturales)
+\item $Si~m,n~\in~\mathbb{N}~\&~m' = n'~\rightarrow~m = n$
+\item Sea $S~\subseteq~\mathbb{N} : 1~\in~S~\&~\forall~k~\in~\mathbb{S}~\exists~k'~\rightarrow~S = \mathbb{N}$
+\end{itemize} 
+Al último postulado se le conoce como \textbf{Principio de inducción}
+\end{frame}
+
+\begin{frame}
+\frametitle{Inducción Matemática}
+La inducción matemática es un método de demostración muy útil para probar propiedades, principalmente en los números enteros,
+así como probar algunas simplificaciones para series de números.
+De manera general este método consta de 3 pasos:
+\begin{itemize}
+\item \textbf{Caso base}\\
+Debemos partir de un valor para el que se cumpla la propiedad o serie que queremos demostrar, por lo general empezamos 
+con $n = 1$
+\item \textbf{n = k}\\
+Ya que probamos que se cumple para un caso base, asumimos que se cumple para cualquier $k~\in~\mathbb{N}$,
+\item \textbf{n = k+1}\\
+Sólo queda por demostrar que la propiedad se cumple para $n = k+1$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Inducción Matemática}
+\begin{ejem}
+Determine si la siguiente igualdad es verdadera por el método de inducción:\\ \hspace{0cm} \\
+$1 + 2 + 3 + ... + n = \frac{n(n + 1)}{2}$\\ \hspace{0cm} \\
+\begin{itemize}
+\item Paso 1\\
+Demostramos que se cumpla para $n = 1$\\ \hspace{0cm} \\
+$1 = \frac{1(1 + 1)}{2} = \frac{2}{2} = 1$\\ \hspace{0cm} \\
+\item Paso 2\\
+Se cumple para el caso base, así que asumimos que se cumple para $n = k$\\ \hspace{0cm} \\
+$1 + 2 + 3 + ... + k = \frac{k(k + 1)}{2}$
+\end{itemize}
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Inducción Matemática}
+\begin{ejem}
+\begin{itemize}
+\item Paso 3\\
+Sólo queda por demostrar que se cumpla para $n = k+1$, es decir, verificar la siguiente igualdad\\ \hspace{0cm} \\
+$\frac{k(k + 1)}{2} + (k+1) = \frac{(k+1)[(k+1)+1]}{2}$\\ \hspace{0cm} \\
+$\frac{k(k + 1)+2(k+1)}{2} = \frac{(k+1)(k+2)}{2}$\\ \hspace{0cm} \\
+$\frac{k^2+3k+2}{2} = \frac{k^2+3k+2}{2} ~ ~ _Q ~ _E ~ _D$\\ \hspace{0cm} \\
+NOTA: Lo más formal es sólo operar el lado derecho y pasarlo a la forma del lado izquierdo, sin embargo en estos ejemplos operaremos de ambos lados de la igualdad, simplificando y usando las propiedades que nos convengan pues es igual de válida la demostración.
+\end{itemize}
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Inducción Matemática}
+\begin{ejem}
+Determine si la siguiente igualdad es verdadera por el método de inducción:\\ \hspace{0cm} \\
+$8 + 11 + 14 + ... + (3n + 5) = \frac{n(3n + 13)}{2}$\\ \hspace{0cm} \\
+\begin{itemize}
+\item Paso 1\\
+Demostramos que se cumpla para $n = 1$\\ \hspace{0cm} \\
+$(3\cdot1 + 5) = \frac{1(3\cdot1 + 13)}{2} = \frac{16}{2} = 8$\\ \hspace{0cm} \\
+\item Paso 2\\
+Se cumple para el caso base, así que asumimos que se cumple para $n = k$\\ \hspace{0cm} \\
+$8 + 11 + 14 + ... + (3k + 5) = \frac{k(3k + 13)}{2}$\\ \hspace{0cm} \\
+\end{itemize}
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Inducción Matemática}
+\begin{ejem}
+\begin{itemize}
+\item Paso 3\\
+Sólo queda por demostrar que se cumpla para $n = k+1$, es decir, verificar la siguiente igualdad\\ \hspace{0cm} \\
+$\frac{k(3k + 13)}{2} + [3(k+1)+5] = \frac{(k+1)[3(k+1) + 13]}{2}$\\ \hspace{0cm} \\
+$\frac{k(3k + 13)+2(3k+8)}{2} = \frac{(k+1)(3k+16)}{2}$\\ \hspace{0cm} \\
+$\frac{3k^2+19k+16}{2} = \frac{3k^2+19k+16}{2} ~ ~ _Q ~ _E ~ _D$\\ \hspace{0cm} \\
+\end{itemize}
+\end{ejem}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Inducción Matemática}
+\begin{ejem}
+Determine si la siguiente igualdad es verdadera por el método de inducción:\\ \hspace{0cm} \\
+$1^2 + 2^2 + 3^2 + ... + n^2 = \frac{n(n + 1)(2n + 1)}{6}$\\ \hspace{0cm} \\
+\begin{itemize}
+\item Paso 1\\
+Demostramos que se cumpla para $n = 1$\\ \hspace{0cm} \\
+$1^2 = \frac{1(1 + 1)(2\cdot1 + 1)}{6} = \frac{6}{6} = 1$
+\item Paso 2\\
+Se cumple para el caso base, así que asumimos que se cumple para $n = k$\\ \hspace{0cm} \\
+$1^2 + 2^2 + 3^2 + ... + k^2 = \frac{k(k + 1)(2k + 1)}{6}$\\ \hspace{0cm} \\
+\end{itemize}
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Inducción Matemática}
+\begin{ejem}
+\begin{itemize}
+\item Paso 3\\
+Sólo queda por demostrar que se cumpla para $n = k+1$, es decir, verificar la siguiente igualdad\\ \hspace{0cm} \\
+$\frac{k(k + 1)(2k + 1)}{6} + (k+1)^2 = \frac{(k+1)[(k+1) + 1][2(k + 1)+1]}{6}$\\ \hspace{0cm} \\
+$\frac{(k^2 + k)(2k + 1)+6(k+1)^2}{6} = \frac{(k+1)(k+2)(2k + 3)}{6}$\\ \hspace{0cm} \\
+$\frac{2k^3+3k^2+k+6(k^2+2k+1)}{6} = \frac{(k+1)(2k^2+7k+6)}{6}$\\ \hspace{0cm} \\
+$\frac{2k^3+9k^2+13k+6}{6} = \frac{2k^3+9k^2+13k+6}{6} ~ ~ _Q ~ _E ~ _D$\\ \hspace{0cm} \\
+\end{itemize}
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\begin{eje}
+Determine si la siguiente igualdad es verdadera por el método de inducción:\\ \hspace{0cm} \\
+$1^2+3^2+5^2+...+(2n-1)^2 = \frac{n(2n-1)(2n+1)}{3}$
+\end{eje}
+\end{frame}
+
+\end{document}

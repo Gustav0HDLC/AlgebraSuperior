@@ -1,0 +1,360 @@
+\documentclass[11pt]{beamer}
+\usetheme{Madrid}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\newtheorem{defi}{Definición}
+\newtheorem{eje}{Ejercicio}
+\newtheorem{ejem}{Ejemplo}
+\newtheorem{axiom}{Axioma}
+\newtheorem{teor}{Teorema}
+\usepackage{lipsum}
+\author{Adriana Dávila Santos}
+\title{Sistemas de ecuaciones lineales}
+%\setbeamercovered{transparent} 
+%\setbeamertemplate{navigation symbols}{} 
+%\logo{} 
+%\institute{} 
+%\date{} 
+%\subject{} 
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%\begin{frame}
+%\tableofcontents
+%\end{frame}
+
+\begin{frame}{• Objetivo particular: }
+El alumno identificará ecuaciones lineales y sistemas de ecuaciones lineales, establecerá las
+matrices asociadas a sistemas de ecuaciones lineales y resolverá sistemas por medio de
+eliminación de incógnitas.
+\end{frame}
+
+\begin{frame}
+\frametitle{Definiciones y clasificación}
+\begin{defi}
+Se le llama \textbf{ecuación lineal} a la igualdad que involucra sumas de una o más variables elevadas al exponente 1 con su respectivo coeficiente.\\ 
+\begin{center}
+$a_{11}x_1 + a_{12}x_2 + ... + a_{1n}x_n = k$\\
+\end{center}
+donde $a_i$ son coeficientes y $k$ es un término independiente.  
+\end{defi}
+\begin{defi}
+Un \textbf{sistema de ecuaciones lineales} es un conjunto de ecuaciones lineales definidas sobre un cuerpo o anillo conmutativo.\\
+\begin{center}
+$a_{11}x_1 + a_{12}x_2 + a_{13}x_3 = k_1$\\
+$a_{21}x_1 + a_{22}x_2 + a_{23}x_3 = k_2$\\
+$a_{31}x_1 + a_{32}x_2 + a_{33}x_3 = k_3$
+\end{center}
+\end{defi}
+\end{frame}
+
+\begin{frame}
+\frametitle{Definiciones y clasificación}
+\begin{defi}
+Se le llama \textbf{solución de un sistema de ecuaciones lineales} al conjunto de valores que pueden tomar las variables $x_i$ de modo que se cumpla lo siguiente:\\
+\begin{center}
+$a_{11}x_1 + a_{12}x_2 + a_{13}x_3 - k_1 = 0$\\
+$a_{21}x_1 + a_{22}x_2 + a_{23}x_3 - k_2 = 0$\\
+$a_{31}x_1 + a_{32}x_2 + a_{33}x_3 - k_3 = 0$
+\end{center}
+\end{defi}
+NOTA: Estamos planteando estos conceptos para un sistema de 3x3 (3 ecuaciones y 3 variables) pero se entiende que aplica para un sistema (mxn). Los términos $k_i$ toman valor negativo porque suponemos que al inicio del planteamiento se encuentran del lado derecho de la igualdad pero los pasamos al lado izquierdo con su respectivo cambio de signo. 
+\end{frame}
+
+\begin{frame}
+\frametitle{Definiciones y clasificación}
+Podemos clasificar a los sistemas de ecuaciones lineales de acuerdo a su número de soluciones. \\
+Primero los podemos distinguir en dos grupos: sistemas compatibles e incompatibles.\\
+Un sistema compatible es aquel que tiene solución y uno incompatible es aquel que no tiene solución.\\
+Dentro de los sistemas compatibles podemos subdividirlos en dos: sistemas compatibles determinados e indeterminados.\\
+Un sistema compatible determinado es aquel que tiene una solución única y uno indeterminado es aquel que tiene infinitas soluciones.	
+\end{frame}
+
+\begin{frame}
+\frametitle{Definiciones y clasificación}
+\begin{defi}
+Un sistema de ecuaciones lineales se denomina homogéneo si el término constante de cada ecuación del sistema es cero. En otras palabras, un sistema de ecuaciones lineales es homogéneo si es de la forma:\\
+\begin{center}
+$a_{11}x_1 + a_{12}x_2 + ... + a_{1n}x_3 = 0$\\
+$a_{21}x_1 + a_{22}x_2 + ... + a_{2n}x_3 = 0$\\
+.\\
+.\\
+.\\
+$a_{m1}x_1 + a_{m2}x_2 + ... + a_{mn}x_3 = 0$
+\end{center}
+\end{defi}
+\begin{defi}
+La \textbf{solución trivial} es aquella que consiste en asignar a todas las variables el valor de 0. Es decir, $x_i = 0$, por lo que sólo se puede aplicar a sistemas homogéneos.
+\end{defi}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Sistemas y matrices}
+\framesubtitle{Matrices como arreglos de números. Orden de una matriz}
+\begin{defi}
+Una \textbf{matriz} es un arreglo bidimensional de números de la siguiente forma:\\ \hspace{0cm} \\
+\begin{center}
+${\displaystyle \mathbf {A} ={\begin{pmatrix}a_{11}&a_{12}&\cdots &a_{1n}\\a_{21}&a_{22}&\cdots &a_{2n}\\\vdots &\vdots &\ddots &\vdots \\a_{m1}&a_{m2}&\cdots &a_{mn}\\\end{pmatrix}}}$
+\end{center}
+\end{defi}
+\begin{defi}
+En general, se denota como m al número de renglones y como n al número de columnas de una matriz, así, decimos que una matriz es de \textbf{orden} mxn porque tiene m renglones y n columnas.
+\end{defi}
+\end{frame}
+
+\begin{frame}
+\frametitle{Sistemas y matrices}
+\framesubtitle{Matrices de coeficientes y matriz aumentada de un sistema}
+\begin{defi}
+Una \textbf{matriz de coeficientes} es una matriz compuesta por los coeficientes de las variables de un sistema de ecuaciones lineales. Este tipo de matriz es usada para resolver los sistemas de ecuaciones.
+\end{defi}
+\begin{defi}
+Sean la matriz A de orden mxn y la matriz B de orden mxp, la matriz aumentada $A|B$ es la unión de ambas matrices formando una nueva de orden mx(n+p) colocando los coeficientes de B seguidos de los de A
+\end{defi}
+\end{frame}
+
+\begin{frame}
+\frametitle{Sistemas y matrices}
+\framesubtitle{Vectores de incógnitas y de solución}
+El concepto de matriz aumentada sirve para plantear un sistema de ecuaciones lineales en forma de arreglo para poder trabajar con los coeficientes y hallar una solución. Sea el siguiente sistema de ecuaciones lineales: \\ \hspace{0cm} \\
+\begin{center}
+$a_{11}x_1 + a_{12}x_2 + ... + a_{1n}x_3 = k_1$\\
+$a_{21}x_1 + a_{22}x_2 + ... + a_{2n}x_3 = k_2$\\
+.\\
+.\\
+.\\
+$a_{m1}x_1 + a_{m2}x_2 + ... + a_{mn}x_3 = k_m$\\
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Sistemas y matrices}
+\framesubtitle{Vectores de incógnitas y de solución}
+Su respectiva matriz aumentada que la representa es la siguiente: \\ \hspace{0cm} \\
+\begin{center}
+${\displaystyle \mathbf {A} ={\begin{pmatrix}a_{11}&a_{12}&\cdots &a_{1n}| &k_1\\a_{21}&a_{22}&\cdots &a_{2n}| &k_2\\\vdots &\vdots &\ddots &\vdots \\a_{m1}&a_{m2}&\cdots &a_{mn}| &k_m\\\end{pmatrix}}}$
+\end{center}
+Donde podemos ver que del lado izquierdo se encuentra la \textbf{matriz de coeficientes} que como su nombre lo indica está compuesta por los coeficientes de las variables del sistema de ecuaciones, del lado derecho tenemos la matriz de orden 1xm que contiene los valores independientes del lado derecho del sistema de ecuaciones. Entonces la unión de estas dos matrices da como resultado la matriz aumentada.
+\end{frame}
+
+\begin{frame}
+\frametitle{Sistemas y matrices}
+\framesubtitle{Vectores de incógnitas y de solución}
+\begin{defi}
+Sea A la matriz de orden mxn de coeficientes de un sistema de ecuacioes lineales, X la matriz de orden nx1 que contiene a las variables $x_i$ del sistema de ecuaciones y B la matriz de orden mx1 que contiene los coeficientes independientes del lado derecho del sistema. Se dice que X es el \textbf{vector solución} si se cumple que AX = B.
+\end{defi}
+\end{frame}
+
+\begin{frame}
+\frametitle{Operaciones elementales por renglón}
+\framesubtitle{Sistemas equivalentes}
+\begin{defi}
+Dada una matriz A de orden n como la siguiente:\\ \hspace{0cm} \\
+\begin{center}
+${\displaystyle \mathbf {A} ={\begin{pmatrix}a_{11}&a_{12}&\cdots &a_{1n}\\a_{21}&a_{22}&\cdots &a_{2n}\\\vdots &\vdots &\ddots &\vdots \\a_{n1}&a_{n2}&\cdots &a_{nn}\\\end{pmatrix}}}$
+\end{center}
+La diagonal que consta de los elementos $a_{ij}$ donde i=j se le llama \textbf{diagonal principal} de la matriz.\\ \hspace{0cm} \\
+NOTA: A una matriz de orden nxn se le llama matriz cuadrada y para el orden solo se menciona el valor de n.
+\end{defi}
+\end{frame}
+
+\begin{frame}
+\frametitle{Operaciones elementales por renglón}
+\framesubtitle{Sistemas equivalentes}
+\begin{defi}
+Sea A una matriz cuadrada de orden nxn, si para todos los valores de la diagonal principal el valor es 1, es decir, $x_{ij} = 1$ donde i=j y además $\forall~x_{ij} = 0$ donde i$\neq$j, se dice que es una \textbf{matriz identidad} o \textbf{matriz idéntica}.  
+\begin{center}
+${\displaystyle \mathbf {A} ={\begin{pmatrix}1&0&\cdots &0\\0&1&\cdots &0\\\vdots &\vdots &\ddots &\vdots \\0&0&\cdots &1\\\end{pmatrix}}}$
+\end{center}
+Y se denota como $I_n$ en caso de querer especificar el orden o solo como $I$.
+\end{defi}
+\end{frame}
+
+\begin{frame}
+\frametitle{Operaciones elementales por renglón}
+\framesubtitle{Sistemas equivalentes}
+Dada una matriz A, de tamaño mxn, las siguientes tres operaciones se llaman operaciones elementales de renglón en la matriz A:\\
+\begin{itemize}
+\item Multiplicar o dividir un renglón por un número diferente de cero.
+\item Sumar el múltiplo de un renglón a otro renglón.
+\item Intercambiar dos renglones.
+\end{itemize}
+\begin{defi}
+El proceso de aplicar las operaciones elementales de renglón con el propósito de simplificar una matriz, se  llama \textbf{reducción por renglones}.
+\end{defi}
+\end{frame}
+
+\begin{frame}
+\frametitle{Operaciones elementales por renglón}
+\framesubtitle{Sistemas equivalentes}
+En el proceso de aplicar operaciones elementales de renglón, se utilizará la siguiente notación: \\
+\begin{itemize}
+\item $R_i~\rightarrow~CR_i$ significa sustituir el iésimo renglón  por el iésimo renglón multiplicando por C.
+\item $R_j~\rightarrow~R_j + CR_i$ significa que se sustituye el j-ésimo renglón por la suma del j-ésimo renglón más el iésimo renglón multiplicado por C.
+\item $R_i~\leftrightarrow~R_j $ significa que se intercambian los renglones i y j.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Operaciones elementales por renglón}
+\framesubtitle{Sistemas equivalentes}
+\begin{ejem}
+Aplicar las siguientes operaciones elementales por renglón de manera consecutiva a la matriz A: \\
+\begin{center}
+${\displaystyle \mathbf {A} ={\begin{pmatrix}1&5&7\\8&2&13\\6&9&0\\\end{pmatrix}}}$
+\end{center}
+\begin{itemize}
+\item $R_1 \rightarrow 2R_1$ \\ \hspace{0cm} \\
+${\displaystyle \mathbf {} {\begin{pmatrix}2&10&14\\8&2&13\\6&9&0\\\end{pmatrix}}}$ 
+\end{itemize}
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Operaciones elementales por renglón}
+\framesubtitle{Sistemas equivalentes}
+\begin{ejem}
+\begin{itemize}
+\item $R_2 \rightarrow R_2 + 2R_3$ \\ \hspace{0cm} \\
+${\displaystyle \mathbf {} {\begin{pmatrix}2&10&14\\20&20&13\\6&9&0\\\end{pmatrix}}}$\\ \hspace{0cm} \\ 
+\item $R_1 \leftrightarrow R_3$ \\ \hspace{0cm} \\
+${\displaystyle \mathbf {} {\begin{pmatrix}6&9&0\\20&20&13\\2&10&14\\\end{pmatrix}}}$ 
+\end{itemize}
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Operaciones elementales por renglón}
+\framesubtitle{Sistemas equivalentes}
+\begin{defi}
+A los sistemas de ecuaciones que tienen la misma solución se les llama sistemas equivalentes.
+\end{defi}
+NOTA: Aquí es importante mencionar que hablando en términos de matrices, al aplicar operaciones elementales por renglones a una matriz asociada a un sistema de ecuaciones lineales, podemos decir que las matrices son equivalentes, por lo tanto, los sistemas también lo son.\\
+De aquí la importancia de las operaciones elementales, nos permiten modificar coeficientes de manera que sea más sencillo operar con ellos para determinar la solución de un sistema.\\
+Del ejemplo anterior todas las matrices resultantes son equivalentes.
+\end{frame}
+
+\begin{frame}
+\frametitle{Operaciones elementales por renglón}
+\framesubtitle{Solución de sistemas de ecuaciones lineales mediante eliminación de incógnitas}
+Existen diversas formas de resolver sistemas de ecuaciones lineales, una de ellas es aplicando operaciones elementales a la matriz asociada al sistema de modo que simplifiquemos lo más posible para deducir de manera más sencilla la solución.
+Para explicar este proceso usaremos un ejemplo como guía. \\ \hspace{0cm} \\
+Sea el siguiente sistema de ecuaciones lineales: \\
+$2x_1 + 3x_2 + x_3 = -1$\\
+$3x_1 - 4x_2 + 2x_3 = 3$\\
+$-x_1 + 2x_2 + 3x_3 = 2$\\ \hspace{0cm} \\
+Determine su solución si es que existe.
+\end{frame}
+
+\begin{frame}
+\frametitle{Operaciones elementales por renglón}
+\framesubtitle{Solución de sistemas de ecuaciones lineales mediante eliminación de incógnitas}
+Para este caso empezamos con crear la matriz asociada al sistema con sus respectivos términos independientes del lado derecho y obtenemos lo siguiente: \\ \hspace{0cm} \\
+${\displaystyle \mathbf {A} ={\begin{pmatrix}2&3&1|&-1\\3&-4&2|&3\\-1&2&3|&2\\\end{pmatrix}}}$\\ \hspace{0cm} \\ 
+Una vez hecho esto, aplicamos operaciones elementales por renglón para que en $R_3$ los elementos $a_{31}$ y $a_{32}$ sean 0. La lógica detrás de esto es que al ser sistemas equivalentes si tenemos que $a_{33}$ y $a_{34}$ son diferente de 0, sería equivalente a tener una ecuación lineal del tipo $ax = b$ donde encontrar el valor de $x$ es cuestión de un simple despeje.	
+\end{frame}
+
+\begin{frame}
+\frametitle{Operaciones elementales por renglón}
+\framesubtitle{Solución de sistemas de ecuaciones lineales mediante eliminación de incógnitas}
+${\displaystyle \mathbf {} {\begin{pmatrix}2&3&1|&-1\\3&-4&2|&3\\-1&2&3|&2\\\end{pmatrix}}} ~ R_1\leftrightarrow R_3 ~ {\displaystyle \mathbf {} {\begin{pmatrix}-1&2&3|&2\\3&-4&2|&3\\2&3&1|&-1\\\end{pmatrix}}} ~ R_3\rightarrow R_3+2R_1 ~$ \\ \hspace{0cm}\\
+${\displaystyle \mathbf {} {\begin{pmatrix}-1&2&3|&2\\3&-4&2|&3\\0&7&7|&3\\\end{pmatrix}}} ~ R_2\rightarrow R_2+3R_1 ~ {\displaystyle \mathbf {} {\begin{pmatrix}-1&2&3|&2\\0&2&11|&9\\0&7&7|&3\\\end{pmatrix}}} ~ R_3\rightarrow R_3-\frac{7}{2}R_2 ~$\\ \hspace{0cm} \\
+${\displaystyle \mathbf {} {\begin{pmatrix}-1&2&3|&2\\0&2&11|&9\\0&0&-\frac{63}{2}|&-\frac{57}{2}\\\end{pmatrix}}}$\\ \hspace{0cm} \\ 
+\end{frame}
+
+\begin{frame}
+\frametitle{Operaciones elementales por renglón}
+\framesubtitle{Solución de sistemas de ecuaciones lineales mediante eliminación de incógnitas}
+Aquí debemos resaltar varios puntos, primero aclaramos que no es necesario seguir un orden en las operaciones, se pueden aplicar las que considere mejor para llegar a este resultado, además, a este tipo de matriz se le conoce como \textbf{matriz triangular  superior} ya que todos los elementos debajo de la diagonal principal son 0. Es decir, el proceso consiste en obtener una matriz triangular superior a través de operaciones elementales.\\ \hspace{0cm} \\
+LLegando a este punto notamos que la tercer ecuación se reduce a \\ \hspace{0cm} \\
+$-\frac{63}{2}x_3 = -\frac{57}{2}~\rightarrow x_3 = \frac{19}{21}$ \\ \hspace{0cm} \\
+Con este valor sustituimos en la segunda ecuación para obtener el valor de $x_2$ y repetimos el proceso para la primera ecuación, en forma de escalera.
+\end{frame}
+
+\begin{frame}
+\frametitle{Operaciones elementales por renglón}
+\framesubtitle{Solución de sistemas de ecuaciones lineales mediante eliminación de incógnitas}
+$2x_2 + 11x_3 = 9 ~\rightarrow 2x_2 + 11(\frac{19}{21}) = 9~\rightarrow 2x_2 = -\frac{20}{21} ~ \rightarrow x_2 = -\frac{10}{21}$\\ \hspace{0cm} \\
+Con esto ya tenemos un segundo valor y solo nos resta obtener uno.\\ \hspace{0cm} \\
+$-x_1 + 2x_2 + 3x_3 = 2 ~\rightarrow -x_1 + 2(-\frac{10}{21}) + 3(\frac{19}{21}) = 2 ~\rightarrow x_1 = -\frac{5}{21}$\\ \hspace{0cm} \\
+$\therefore x_1 = -\frac{5}{21},~ x_2 = \frac{-10}{21},~ x_3 = \frac{19}{21}$\\ \hspace{0cm} \\
+Esta es nuestra solución y este método es enteramente similar al método de eliminación que conocemos, solo que trabajamos con matrices para un mejor orden y visualización.
+\end{frame}
+
+\begin{frame}
+\frametitle{Rango}
+\begin{defi}
+El \textbf{rango} de una matriz A es el número de filas (o columnas) linealmente independientes y se denota como r(A).
+\end{defi}
+\begin{defi}
+Una matriz se llama escalonada por renglones o simplemente escalonada si cumple con las siguientes propiedades:\\
+\begin{itemize}
+\item Todos los renglones cero están en la parte inferior de la matriz.
+\item El elemento delantero de cada renglón diferente de cero está a la derecha del elemento
+delantero diferente de cero del renglón anterior.
+\end{itemize}
+\end{defi}
+\end{frame}
+
+\begin{frame}
+\frametitle{Rango}
+\begin{defi}
+Una matriz se llama escalonada reducida por renglones o simplemente escalonada reducida si es una matriz reducida y además cumple con las siguientes propiedades:
+\begin{itemize}
+\item En cada renglón no nulo el elemento delantero diferente de cero (“pivote”) es igual a uno
+\item Todos los elementos por encima de los pivotes son nulos
+\end{itemize}
+\end{defi}
+\end{frame}
+
+\begin{frame}
+\frametitle{Rango}
+Otra forma de entender el concepto de rango es como el número de filas no nulas que quedan en una matriz después de pasarla a su forma escalonada.\\ \hspace{0cm} \\
+Si tenemos un sistema de n variables y n ecuaciones entonces su matriz asociada A de coeficientes será una matriz cuadrada de orden n. Si además r(A) = n, entonces podemos afirmar que el sistema es compatible determinado, es decir, con solución única.\\ \hspace{0cm} \\
+Siguiendo con el caso de la matriz A de orden n pero con $r(A)\neq 0$ entonces tenemos un sistema incompatible.\\ \hspace{0cm} \\
+Ahora bien, si tenemos una matriz B de orden nxm y $r(B)\leq$  \# de incognitas del sistema, entonces es indeterminado, es decir, tiene infinitas soluciones.
+\end{frame}
+
+\begin{frame}
+\frametitle{Rango}
+\begin{ejem}
+Resuelva el siguiente sistema de ecuaciones:\\
+$x_1 - x_2 +3x_3 = 13$\\
+$x_1 + x_2 + x_3 = 11$\\
+$2x_1 + 2x_2 - x_3 = 7$\\ \hspace{0cm} \\
+La matriz aumentada asociada a este sistema es: \\ \hspace{0cm} \\
+\begin{center}
+${\displaystyle \mathbf {} {\begin{pmatrix}1&-1&3|&13\\1&1&1|&11\\2&2&-1|&7\\\end{pmatrix}}}$
+\end{center}
+Comenzamos a operar por renglones para llevarla a su forma reducida, es decir, una matriz triangular superior.
+\end{ejem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Rango}
+\begin{ejem}
+$R_3 \rightarrow R_3 - 2R_1 ~ {\displaystyle \mathbf {} {\begin{pmatrix}1&-1&3|&13\\1&1&1|&11\\0&4&-7|&-19\\\end{pmatrix}}}
+R_2 \rightarrow R_2 - R_1 ~ {\displaystyle \mathbf {} {\begin{pmatrix}1&-1&3|&13\\0&2&-2|&-2\\0&4&-7|&-19\\\end{pmatrix}}}
+R_3 \rightarrow R_3 - 2R_2 ~ {\displaystyle \mathbf {} {\begin{pmatrix}1&-1&3|&13\\0&2&-2|&-2\\0&0&-3|&-15\\\end{pmatrix}}}$
+\\ \hspace{0cm} \\
+De lo anterior tenemos que $3x_3 = 15 \rightarrow x_3 = 5$\\
+Luego $2x_2 -10 = -2 ~ \rightarrow x_2 = 4$\\
+Por último $x_1 - 4 + 15 = 13 \rightarrow x_1 + 11 = 13 \rightarrow x_1 = 2$\\
+$\therefore$
+\begin{itemize}
+\item $x_1 = 2$
+\item $x_2 = 4$
+\item $x_3 = 5$ 
+\end{itemize} 
+\end{ejem}
+\end{frame}
+
+\end{document}
