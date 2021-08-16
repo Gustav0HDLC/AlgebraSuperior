@@ -17,3 +17,6 @@ Unidades :
 Para editar alguna presentación basta con descargar el archivo con extensión _.tex_, antes de compilar el archivo, ve a la parte superior y asegúrate de contar con las librerías y paquetes necesarios, de lo contrario no podrás visualizar el material. En caso de usar imágenes recuerda subirlas al repositorio para que los editores cuenten con todo los recursos y seguir actualizando.
 
 En caso de que solo desees el material como apoyo para tu estudio sólo descarga el archvio _PDF_, se recomienda que realices los ejercicios que vienen en las presentaciones para reforzar tu conocimiento. Puedes pedirle a tu profesor que los revise para estar seguro de haber hecho un buen trabajo o para aclarar dudas.
+
+También puedes encontrar este material en el siguiente link:
+https://drive.google.com/drive/folders/1gLKFG2k0IJ98ndC725h72oX_ZoUHMqhd?usp=sharing
